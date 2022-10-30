@@ -248,8 +248,9 @@
             csubmitMSG(false, "Please fill all fields!");
         } else {
             // everything looks good!
-            event.preventDefault();
-            csubmitForm();
+            // event.preventDefault();
+            // csubmitForm();
+            console.log("good Submition")
         }
     });
 
@@ -305,8 +306,9 @@
             psubmitMSG(false, "Please fill all fields!");
         } else {
             // everything looks good!
-            event.preventDefault();
-            psubmitForm();
+            // event.preventDefault();
+            // psubmitForm();
+            console.log("Good Submition!")
         }
     });
 
