@@ -259,20 +259,20 @@
 		var email = $("#cemail").val();
         var message = $("#cmessage").val();
         var terms = $("#cterms").val();
-        $.ajax({
-            type: "POST",
-            url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    cformSuccess();
-                } else {
-                    cformError();
-                    csubmitMSG(false, text);
-                }
-            }
-        });
-	}
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "php/contactform-process.php",
+    //         data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
+    //         success: function(text) {
+    //             if (text == "success") {
+    //                 cformSuccess();
+    //             } else {
+    //                 cformError();
+    //                 csubmitMSG(false, text);
+    //             }
+    //         }
+    //     });
+	// }
 
     function cformSuccess() {
         $("#contactForm")[0].reset();
@@ -317,19 +317,19 @@
         var select = $("#pselect").val();
         var terms = $("#pterms").val();
         
-        $.ajax({
-            type: "POST",
-            url: "php/privacyform-process.php",
-            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    pformSuccess();
-                } else {
-                    pformError();
-                    psubmitMSG(false, text);
-                }
-            }
-        });
+        // $.ajax({
+        //     type: "POST",
+        //     url: "php/privacyform-process.php",
+        //     data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+        //     success: function(text) {
+        //         if (text == "success") {
+        //             pformSuccess();
+        //         } else {
+        //             pformError();
+        //             psubmitMSG(false, text);
+        //         }
+        //     }
+        // });
 	}
 
     function pformSuccess() {
