@@ -272,7 +272,7 @@
     //             }
     //         }
     //     });
-	// }
+	}
 
     function cformSuccess() {
         $("#contactForm")[0].reset();
