@@ -1,6 +1,6 @@
-/* Template: Juno - Multipurpose Landing Page Pack
-   Author: InovatikThemes
-   Created: Mar 2019
+/* Template: Sync - Free Mobile App Landing Page HTML Template
+   Author: Inovatik
+   Created: Dec 2019
    Description: Custom JS file
 */
 
@@ -24,7 +24,7 @@
 	/* Navbar Scripts */
 	// jQuery to collapse the navbar on scroll
     $(window).on('scroll load', function() {
-		if ($(".navbar").offset().top > 20) {
+		if ($(".navbar").offset().top > 60) {
 			$(".fixed-top").addClass("top-nav-collapse");
 		} else {
 			$(".fixed-top").removeClass("top-nav-collapse");
@@ -49,46 +49,6 @@
     });
 
 
-    /* Rotating Text - Morphtext */
-	$("#js-rotating").Morphext({
-		// The [in] animation type. Refer to Animate.css for a list of available animations.
-		animation: "fadeIn",
-		// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-		separator: ",",
-		// The delay between the changing of each phrase in milliseconds.
-		speed: 2000,
-		complete: function () {
-			// Called after the entrance animation is executed.
-		}
-    });
-    
-
-    /* Card Slider - Swiper */
-	var cardSlider = new Swiper('.card-slider', {
-		autoplay: {
-            delay: 4000,
-            disableOnInteraction: false
-		},
-        loop: true,
-        navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		},
-		slidesPerView: 3,
-		spaceBetween: 20,
-        breakpoints: {
-            // when window is <= 992px
-            992: {
-                slidesPerView: 2
-            },
-            // when window is <= 768px
-            768: {
-                slidesPerView: 1
-            } 
-        }
-    });
-
-    
     /* Image Slider - Swiper */
     var imageSlider = new Swiper('.image-slider', {
         autoplay: {
@@ -103,36 +63,31 @@
         spaceBetween: 30,
         slidesPerView: 5,
 		breakpoints: {
-            // when window is <= 380px
-            380: {
+            // when window is <= 516px
+            516: {
                 slidesPerView: 1,
                 spaceBetween: 10
             },
-            // when window is <= 516px
-            516: {
+            // when window is <= 767px
+            767: {
                 slidesPerView: 2,
-                spaceBetween: 10
-            },
-            // when window is <= 768px
-            768: {
-                slidesPerView: 3,
                 spaceBetween: 20
             },
-            // when window is <= 992px
-            992: {
-                slidesPerView: 4,
+            // when window is <= 991px
+            991: {
+                slidesPerView: 3,
                 spaceBetween: 30
             },
-            // when window is <= 1200px
-            1200: {
-                slidesPerView: 5,
+            // when window is <= 1199px
+            1199: {
+                slidesPerView: 4,
                 spaceBetween: 30
             },
         }
     });
 
 
-    /* Image Slider - Magnific Popup */
+    /* Image Lightbox - Magnific Popup */
 	$('.popup-link').magnificPopup({
 		removalDelay: 300,
 		type: 'image',
@@ -148,8 +103,8 @@
 			enabled:true //enable gallery mode
 		}
     });
-
     
+
     /* Video Lightbox - Magnific Popup */
     $('.popup-youtube, .popup-vimeo').magnificPopup({
         disableOn: 700,
@@ -183,7 +138,7 @@
     });
 
 
-    /* Lightbox - Magnific Popup */
+    /* Details Lightbox - Magnific Popup */
 	$('.popup-with-move-anim').magnificPopup({
 		type: 'inline',
 		fixedContentPos: false, /* keep it false to avoid html tag shift with margin-right: 17px */
@@ -194,7 +149,7 @@
 		midClick: true,
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom'
-	});
+    });
     
 
     /* Counter - CountTo */
@@ -227,8 +182,8 @@
 			}
 		}
     });
-
-
+    
+    
     /* Move Form Fields Label When User Types */
     // for input and textarea fields
     $("input, textarea").keyup(function(){
@@ -240,64 +195,6 @@
     });
 
 
-    /* Contact Form */
-    $("#contactForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            cformError();
-            csubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            // event.preventDefault();
-            // csubmitForm();
-            console.log("good Submition")
-        }
-    });
-
-    function csubmitForm() {
-        // initiate variables with form content
-		var name = $("#cname").val();
-		var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "php/contactform-process.php",
-    //         data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
-    //         success: function(text) {
-    //             if (text == "success") {
-    //                 cformSuccess();
-    //             } else {
-    //                 cformError();
-    //                 csubmitMSG(false, text);
-    //             }
-    //         }
-    //     });
-	}
-
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-        $("textarea").removeClass('notEmpty'); // resets the field label after submission
-    }
-
-    function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass();
-        });
-	}
-
-    function csubmitMSG(valid, msg) {
-        if (valid) {
-            var msgClasses = "h3 text-center tada animated";
-        } else {
-            var msgClasses = "h3 text-center";
-        }
-        $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
-
-
     /* Privacy Form */
     $("#privacyForm").validator().on("submit", function(event) {
     	if (event.isDefaultPrevented()) {
@@ -306,9 +203,8 @@
             psubmitMSG(false, "Please fill all fields!");
         } else {
             // everything looks good!
-            // event.preventDefault();
-            // psubmitForm();
-            console.log("Good Submition!")
+            event.preventDefault();
+            psubmitForm();
         }
     });
 
@@ -319,19 +215,19 @@
         var select = $("#pselect").val();
         var terms = $("#pterms").val();
         
-        // $.ajax({
-        //     type: "POST",
-        //     url: "php/privacyform-process.php",
-        //     data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
-        //     success: function(text) {
-        //         if (text == "success") {
-        //             pformSuccess();
-        //         } else {
-        //             pformError();
-        //             psubmitMSG(false, text);
-        //         }
-        //     }
-        // });
+        $.ajax({
+            type: "POST",
+            url: "php/privacyform-process.php",
+            data: "name=" + name + "&email=" + email + "&select=" + select + "&terms=" + terms, 
+            success: function(text) {
+                if (text == "success") {
+                    pformSuccess();
+                } else {
+                    pformError();
+                    psubmitMSG(false, text);
+                }
+            }
+        });
 	}
 
     function pformSuccess() {
