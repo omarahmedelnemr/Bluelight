@@ -1310,6 +1310,44 @@ input[type='checkbox'] {
 	vertical-align: middle;
 }
 
+/************************/
+/* Plans */
+/************************/
+
+#PricingPlans{
+	background-color: #333;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	background-color: #e8eff6;
+}
+
+
+.rounded-lg {
+	border-radius: 1rem !important;
+  }
+  
+  .text-small {
+	font-size: 0.9rem !important;
+  }
+  
+  .custom-separator {
+	width: 5rem;
+	height: 6px;
+	border-radius: 1rem;
+  }
+  
+  .text-uppercase {
+	letter-spacing: 0.2em;
+  }
+  /* #PricingPlans .active{
+	transform: scale(1.1);
+  } */
+  @media (min-width: 992px) {
+	.active{
+		transform: scale(1.1);
+
+	}
+  }
 
 /************************/
 /*     13. Download     */
